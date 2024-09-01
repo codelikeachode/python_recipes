@@ -6,7 +6,6 @@ class IText(ABC):
     def __init__(self, text_imp):
         self.textImp = text_imp
 
-
     # Operations
     @abstractmethod
     def get_text(self):
@@ -21,7 +20,7 @@ class IText(ABC):
 class TextMaker(IText):
     def get_text(self):
         return self.textImp.get_string()
-    
+
     def add_line(self, value):
         self.textImp.append_line(value)
 
@@ -33,7 +32,7 @@ class TextBuilder:
 
     def get_string(self):
         return "\n".join(self.rows)
-    
+
     def append_line(self, value):
         self.rows.append(value)
 
@@ -41,9 +40,8 @@ class TextBuilder:
 # Concrete Implementor
 class HtmlBuilder(TextBuilder):
     def append_line(self, value):
-        self.rows.append(
-            "<span>" + value + "</span><br/>")
-        
+        self.rows.append("<span>" + value + "</span><br/>")
+
 
 def fill_text_builder(text_imp):
     text_maker = TextMaker(text_imp)

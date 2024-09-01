@@ -1,11 +1,13 @@
 from abc import ABC, abstractmethod
 
+
 # Component
 class IShape(ABC):
     # Operation
     @abstractmethod
     def show_info(self):
         pass
+
 
 # ConcreteComponent
 class Square(IShape):
