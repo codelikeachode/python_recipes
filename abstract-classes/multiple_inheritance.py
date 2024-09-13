@@ -1,16 +1,19 @@
 from abc import *
 
+
 class PId(ABC):
     @property
     @abstractmethod
     def id(self):
         pass
 
+
 class Priced(ABC):
     @property
     @abstractmethod
     def price(self):
         pass
+
 
 class Goods(PId, Priced):
     def __init__(self, p_id, p_price):
@@ -20,13 +23,15 @@ class Goods(PId, Priced):
     @property
     def id(self):
         return self._id
-    
+
     @property
     def price(self):
         return self._price
-    
+
+
 def show_id_and_price(info):
     print(f"id = {info.id}, price = {info.price}")
+
 
 bread = Goods(1, 5)
 show_id_and_price(bread)

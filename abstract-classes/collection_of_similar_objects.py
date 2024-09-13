@@ -1,14 +1,18 @@
 class ANamed:
     name = ""
 
+
 class Flower(ANamed):
     pass
+
 
 class City(ANamed):
     pass
 
+
 class Star(ANamed):
     pass
+
 
 rose = Flower()
 rose.name = "Rose"
