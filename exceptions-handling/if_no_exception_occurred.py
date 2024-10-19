@@ -4,11 +4,9 @@ def throw_if_true(param):
             raise OSError("test exception")
     except OSError:
         print("except")
-    finally:
-        print("finally")
+    else:
+        print("else")
 
 
 throw_if_true(True)
-# printed: "except" and "finally"
 throw_if_true(False)
-# printed: "finally"
